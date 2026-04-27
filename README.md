@@ -82,7 +82,3 @@ LuxDAO → executeProposal(proposalId)
 - ERC-1155, ERC-2981, ERC-20
 - Deployed on Sepolia Testnet
 ```
-
----
-
-貼完按 **Commit changes**，告訴我完成了 🚀
