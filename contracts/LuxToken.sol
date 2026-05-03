@@ -12,15 +12,13 @@ contract LuxToken is ERC20, Ownable {
         ERC20("LuxToken", "LUX")
         Ownable(msg.sender)
     {
-        // 初始供應量：1,000,000 LUX 給 owner
         _mint(msg.sender, 1_000_000 * 10 ** decimals());
     }
 
     function addMinter(address minter) external onlyOwner {
-        authorizedMinters[minter] = true;   // ← 加這裡
+        authorizedMinters[minter] = true;
     }
 
-    // ── 鑄造新代幣（只有 owner 可以呼叫）────────────────
     function mint(address to, uint256 amount) external {
         require(
             msg.sender == owner() || authorizedMinters[msg.sender],
